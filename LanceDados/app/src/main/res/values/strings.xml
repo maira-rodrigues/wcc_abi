@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LanceDados</string>
+    <string name="etiqueta_botao_lancar_dados">Lançar Dados</string>
+    <string name="etiqueta_dado_1">DADO 1</string>
+    <string name="etiqueta_dado_2">DADO 2</string>
+    <string name="cadastro_input_nome">Insira seu nome</string>
+    <string name="jogar_botao_label">Jogar</string>
+</resources>
