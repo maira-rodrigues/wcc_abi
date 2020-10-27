@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">AboutMe</string>
-    <string name="text_content">Maíra</string>
+    <string name="name">Maíra</string>
 </resources>
