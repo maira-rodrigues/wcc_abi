@@ -13,12 +13,14 @@
         style="@style/NameStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/name_description"
         android:text="@string/name" />
 
     <ImageView
         android:id="@+id/star_image"
         android:layout_width="wrap_content"
-        android:layout_gravity="center"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="@string/star_description"
         app:srcCompat="@android:drawable/btn_star_big_on" />
 </LinearLayout>

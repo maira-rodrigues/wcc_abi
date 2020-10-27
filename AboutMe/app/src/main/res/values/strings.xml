@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">AboutMe</string>
     <string name="name">Maíra</string>
+    <string name="name_description">a box of text containing the name Maira</string>
+    <string name="star_description">a yellow star</string>
 </resources>
