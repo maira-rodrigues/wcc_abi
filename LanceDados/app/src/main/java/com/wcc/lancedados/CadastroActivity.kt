@@ -13,10 +13,10 @@ class CadastroActivity : AppCompatActivity() {
 
         val playButton = findViewById<Button>(R.id.jogarBotao)
         playButton.setOnClickListener {
-            var playerName = findViewById<EditText>(R.id.nomeInputText).text.toString()
+            var nomeCadastrado = findViewById<EditText>(R.id.nomeInputText).text.toString()
 
             var intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("playername", playerName)
+            intent.putExtra("playername", nomeCadastrado)
 
             startActivity(intent)
 

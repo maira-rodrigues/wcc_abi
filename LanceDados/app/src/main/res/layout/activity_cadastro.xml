@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffecb3"
+    android:background="@color/blue_grey_50"
     tools:context=".CadastroActivity">
 
     <EditText
@@ -26,11 +26,11 @@
         android:id="@+id/jogarBotao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#ffb300"
+        android:backgroundTint="@color/cyan_300"
         android:fontFamily="@font/ubuntu"
         android:text="@string/jogar_botao_label"
-        android:textColor="#1a237e"
-        app:cornerRadius="12dp"
+        android:textColor="@color/indigo_900"
+        app:cornerRadius="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

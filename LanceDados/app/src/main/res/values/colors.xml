@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--TEMA CLARO-->
+
+    <!--colorPrimary tema claro-->
+    <color name="cyan_200">#80deea</color>
+    <!--PrimaryVariant claro: barrinha superior com status de bateria, hora, sinal etc-->
+    <color name="cyan_500">#00bcd4</color>
+
+
+
+
+    <color name="indigo_900">#1a237e</color>
+
+
+
+
     <color name="purple_200">#FFBB86FC</color>
-    <color name="amarelo_claro">#fff8e1</color>
+
+
     <color name="azul_escuro">#1a237e</color>
 
     <color name="blue_200">#3d5afe</color>
@@ -11,4 +28,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="blue_grey_50">#eceff1</color>  <!--background constraint layout-->
+    <color name="cyan_300">#4dd0e1</color>      <!--background button-->
 </resources>

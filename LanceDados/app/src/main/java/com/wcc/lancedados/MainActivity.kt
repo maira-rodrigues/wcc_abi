@@ -1,5 +1,6 @@
 package com.wcc.lancedados
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -8,21 +9,23 @@ import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val botaoLancarDados = findViewById<Button>(R.id.lanceDadosBotao)
+        val botaoLancarDados = findViewById<Button>(R.id.lanceDadosBotao) //LanceDadosBotao é o id do botão
         val dado1: ImageView = findViewById(R.id.dado1)
         val dado2: ImageView = findViewById(R.id.dado2)
 
-        botaoLancarDados.setOnClickListener {
-            dado1.setImageResource(escolherImagem(gerarNumero()))
+        botaoLancarDados.setOnClickListener { //quando clicar no botão de lançar dados...
+            dado1.setImageResource(escolherImagem(gerarNumero())) //usar imagem gerada pela função escolherImagem que recebe como parametro uma função de numero aleatório
             dado2.setImageResource(escolherImagem(gerarNumero()))
         }
-        val playerName = getIntent().getStringExtra("playername")
+
+        val playerName = this.getIntent().getStringExtra("playername")
         val playerNameTextView = findViewById<TextView>(R.id.playerNameText)
-        playerNameTextView.text =  "Olá, $playerName"
+        playerNameTextView.text = "Olá, " + playerName
     }
 
 
