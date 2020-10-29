@@ -13,105 +13,86 @@ class CardsActivity : AppCompatActivity() {
         val playerOneName = intent.getStringExtra("player_one") ?: "Player One"
         val playerTwoName = intent.getStringExtra("player_two") ?: "Player Two"
 
-        val vehiculeOne = mapOf(
-            "maxAcceleration" to "100",
-            "accelerationTime" to "120",
-            "passengers" to "5",
-            "weight" to "120",
-            "doors" to "2",
-            "style" to "sedã",
-            "gears" to "5",
-            "type" to "car"
+        //instancia 2 players recebendo como parâmetro a String da intent
+        val playerOne = Player(playerOneName)
+        val playerTwo = Player(playerTwoName)
+
+        //---------------INSTANCIANDO VÁRIOS VEÍCULOS-------------------
+        val vehicleOne = Vehicle(
+            100, 120, 5,
+            120, 2, "sedã", 5, "car"
         )
 
-        val vehiculeTwo = mapOf(
-            "maxAcceleration" to "50",
-            "accelerationTime" to "60",
-            "passengers" to "2",
-            "weight" to "10",
-            "doors" to "0",
-            "style" to "regular",
-            "gears" to "7",
-            "type" to "bicke"
+        val vehicleTwo = Vehicle(
+            50, 60, 2,
+            10, 0, "regular", 7, "bike"
         )
 
-        val vehiculeThree = mapOf(
-            "maxAcceleration" to "170",
-            "accelerationTime" to "40",
-            "passengers" to "2",
-            "weight" to "70",
-            "doors" to "0",
-            "style" to "adventure",
-            "gears" to "6",
-            "type" to "motorcycle"
+        val vehicleThree = Vehicle(
+            170, 40, 2,
+            70, 0, "adventure", 6, "motorcycle"
         )
 
-        val vehiculeFour = mapOf(
-            "maxAcceleration" to "130",
-            "accelerationTime" to "170",
-            "passengers" to "4",
-            "weight" to "110",
-            "doors" to "2",
-            "style" to "hatch",
-            "gears" to "5",
-            "type" to "car"
+        val vehicleFour = Vehicle(
+            130, 170, 4,
+            110, 2, "hatch", 5, "car"
         )
 
 
-        val vehiculeFive = mapOf(
-            "maxAcceleration" to "30",
-            "accelerationTime" to "240",
-            "passengers" to "1",
-            "weight" to "13",
-            "doors" to "0",
-            "style" to "regular",
-            "gears" to "4",
-            "type" to "bike"
+        val vehicleFive = Vehicle(
+            30, 240, 1,
+            13, 0, "regular", 4, "bike"
         )
 
-        val driverOne = mapOf(
-            "carXP" to "40",
-            "bikeXP" to "60",
-            "motorcycleXP" to "10",
-            "carChampionships" to "2",
-            "bikeChampionships" to "10",
-            "motorcycleChampionships" to "0",
-            "boldness" to "3",
-            "defensiveDriving" to "4",
+        //------------INSTANCIANDO TRÊS DRIVERS ---------------------
+        val driverOne = Driver(
+            40,
+            60,
+            10,
+            2,
+            10,
+            0,
+            3,
+            4,
         )
 
-        val driverTwo = mapOf(
-            "carXP" to "90",
-            "bikeXP" to "10",
-            "motorcycleXP" to "30",
-            "carChampionships" to "30",
-            "bikeChampionships" to "0",
-            "motorcycleChampionships" to "0",
-            "boldness" to "2",
-            "defensiveDriving" to "7",
+        val driverTwo = Driver(
+            90,
+            10,
+            30,
+            30,
+            0,
+            0,
+            2,
+            7,
         )
 
-        val driverThree = mapOf(
-            "carXP" to "50",
-            "bikeXP" to "30",
-            "motorcycleXP" to "80",
-            "carChampionships" to "3",
-            "bikeChampionships" to "7",
-            "motorcycleChampionships" to "15",
-            "boldness" to "6",
-            "defensiveDriving" to "2",
+        val driverThree = Driver(
+            50,
+            30,
+            80,
+            3,
+            7,
+            15,
+            6,
+            2,
         )
 
-        val vehicles = listOf(vehiculeOne, vehiculeTwo, vehiculeThree, vehiculeFour, vehiculeFive)
+
+        val vehicles = listOf(vehicleOne, vehicleTwo, vehicleThree, vehicleFour, vehicleFive)
         val drivers = listOf(driverOne, driverTwo, driverThree)
 
-        val currentVehiclePlayerOne = vehicles.random()
-        val currentVehiclePlayerTwo = vehicles.random()
+        //CARD RECEIVES RANDOM VEHICLE AND DRIVER + player
+        var cardOne = Card(vehicles.random(), drivers.random(), playerOne)
+        var cardTwo = Card(vehicles.random(), drivers.random(), playerTwo)
 
-        val currentDriverPlayerOne = drivers.random()
-        val currentDriverPlayerTwo = drivers.random()
+        //val currentVehiclePlayerOne = vehicles.random()
+        //val currentVehiclePlayerTwo = vehicles.random()
 
-        val cardOneMaxVelocity =
+        //val currentDriverPlayerOne = drivers.random()
+        //val currentDriverPlayerTwo = drivers.random()
+
+       /* val cardOneMaxVelocity =
             when (currentVehiclePlayerOne["type"]) {
                 "car" ->
                     if (currentVehiclePlayerOne["style"] == "sedã") {
@@ -125,21 +106,21 @@ class CardsActivity : AppCompatActivity() {
 
                 else -> (currentVehiclePlayerOne["maxAcceleration"]?.toInt()
                     ?: 1 * (currentDriverPlayerOne["boldness"]?.toInt() ?: 1))
-            }
+            }*/
 
-        val accelerationTimeCardOne = (currentVehiclePlayerOne["accelerationTime"]?.toInt()
+        /*val accelerationTimeCardOne = (currentVehiclePlayerOne["accelerationTime"]?.toInt()
             ?: 1) * (1 / (currentDriverPlayerOne["accelerationTime"]?.toInt() ?: 1))
 
         val passengersCardOne = (currentVehiclePlayerOne["passengers"]?.toInt()
-            ?: 0) * (1 + (currentDriverPlayerOne["defensiveDriving"]?.toInt() ?: 0))
+            ?: 0) * (1 + (currentDriverPlayerOne["defensiveDriving"]?.toInt() ?: 0)) */
 
-        val xPCardOne = when (currentVehiclePlayerOne["type"]) {
+        /*val xPCardOne = when (currentVehiclePlayerOne["type"]) {
             "car" -> currentDriverPlayerOne["carXP"]?.toInt() ?: 0
             "motorcycle" -> currentDriverPlayerOne["motorcycleXP"]?.toInt() ?: 0
             else -> currentDriverPlayerOne["bikeXP"]?.toInt() ?: 0
-        }
+        }*/
 
-        val cardTwoMaxVelocity =
+        /*val cardTwoMaxVelocity =
             when (currentVehiclePlayerTwo["type"]) {
                 "car" ->
                     if (currentVehiclePlayerTwo["style"] == "sedã") {
@@ -165,22 +146,31 @@ class CardsActivity : AppCompatActivity() {
             "car" -> currentDriverPlayerOne["carXP"]?.toInt() ?: 0
             "motorcycle" -> currentDriverPlayerOne["motorcycleXP"]?.toInt() ?: 0
             else -> currentDriverPlayerOne["bikeXP"]?.toInt() ?: 0
-        }
+        }*/
 
-        cardPlayerOneLabel.text = "Card $playerOneName"
-        cardPlayerTwoLabel.text = "Card $playerTwoName"
+        cardPlayerOneLabel.text = cardOne.label
+        //cardPlayerOneLabel.text = "Card $playerOneName"
+        cardPlayerTwoLabel.text = cardTwo.label
+        //cardPlayerTwoLabel.text = "Card $playerTwoName"
 
-        cardPlayerOneVelocity.text = "Máx velocity: $cardOneMaxVelocity"
-        cardPlayerTwoVelocity.text = "Máx velocity: $cardTwoMaxVelocity"
+        //cardPlayerOneVelocity.text = "Máx velocity: $cardOneMaxVelocity"
+        cardPlayerOneVelocity.text = String.format("Máx velocity: %d", cardOne.maxVelocity)
+        //cardPlayerTwoVelocity.text = "Máx velocity: $cardTwoMaxVelocity"
+        cardPlayerTwoVelocity.text = String.format("Máx velocity: %d", cardTwo.maxVelocity)
 
-        cardPlayerOneAccelerationTime.text = "Acceleration time: $accelerationTimeCardOne"
-        cardPlayerTwoAccelerationTime.text = "Acceleration time: $accelerationTimeCardTwo"
+        //cardPlayerOneAccelerationTime.text = "Acceleration time: $accelerationTimeCardOne"
+        cardPlayerOneAccelerationTime.text = String.format("Acceleration time: %d", cardOne.accelerationTime)
+        //cardPlayerTwoAccelerationTime.text = "Acceleration time: $accelerationTimeCardTwo"
+        cardPlayerTwoAccelerationTime.text = String.format("Acceleration time: %d", cardTwo.accelerationTime)
 
-        cardPlayerOnePassengers.text = "Passengers: $passengersCardOne"
-        cardPlayerTwoPassengers.text = "Passengers: $passengersCardTwo"
+        //cardPlayerOnePassengers.text = "Passengers: $passengersCardOne"
+        cardPlayerOnePassengers.text = String.format("Passengers: %d", cardOne.passengers)
+        //cardPlayerTwoPassengers.text = "Passengers: $passengersCardTwo"
+        cardPlayerTwoPassengers.text = String.format("Passengers: %d", cardTwo.passengers)
 
-        cardPlayerOneXP.text = "XP: $xPCardOne"
-        cardPlayerTwoXP.text = "XP: $xPCardTwo"
+        //cardPlayerTwoXP.text = "XP: $xPCardTwo"
+        cardPlayerOneXP.text = String.format("XP: %d", cardOne.xp)
+        cardPlayerTwoXP.text = String.format("XP: %d", cardTwo.xp)
 
         chooseCriteriaButton.setOnClickListener {
             val intent = Intent(this, ChooseCriteriaActivity::class.java)

@@ -8,6 +8,13 @@ data class Driver (
         val bikeChampionships: Int,
         val motorcycleChampionships: Int,
         val boldness: Int,
-        val defensiveDriving: Int
-
+        val defensiveDriving: Int,
 )
+{
+    var vehicle = setVehicle()
+
+    private fun setVehicle(): Vehicle {
+        return vehicle //isso é um loop infinito? não sei oq eu to fazendo aqui rs
+    }
+}
+

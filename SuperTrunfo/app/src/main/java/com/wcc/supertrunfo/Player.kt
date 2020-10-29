@@ -7,3 +7,16 @@ data class Player(
 //que ser setName
 )
 
+{
+    var vehicle: Vehicle = setVehicle()
+    var driver: Driver = setDriver()
+
+    private fun setDriver(): Driver {
+        return driver
+    }
+
+    private fun setVehicle(): Vehicle {
+        return vehicle
+    }
+}
+
