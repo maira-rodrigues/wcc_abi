@@ -14,7 +14,7 @@ data class Driver (
     var vehicle = setVehicle()
 
     private fun setVehicle(): Vehicle {
-        return vehicle //isso é um loop infinito? não sei oq eu to fazendo aqui rs
+        return vehicle //isso é um loop infinito? não sei oq eu to fazendo aqui rs, é um chute!!
     }
 }
 

@@ -19,7 +19,7 @@ class CardsActivity : AppCompatActivity() {
 
         //---------------INSTANCIANDO VÁRIOS VEÍCULOS-------------------
         val vehicleOne = Vehicle(
-            100, 120, 5,
+            100,120, 5,
             120, 2, "sedã", 5, "car"
         )
 

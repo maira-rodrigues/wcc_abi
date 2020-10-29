@@ -71,4 +71,41 @@
         app:layout_constraintStart_toEndOf="@+id/box_two_text"
         app:layout_constraintTop_toBottomOf="@+id/box_four_text" />
 
+    <Button
+        android:id="@+id/button_red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/red"
+        android:text="RED"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_yellow"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_yellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/yellow"
+        android:text="YELLOW"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/button_red"
+        app:layout_constraintEnd_toStartOf="@+id/button_green"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_red" />
+
+    <Button
+        android:id="@+id/button_green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:text="GREEN"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/button_yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_yellow" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
