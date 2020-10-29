@@ -2,7 +2,6 @@ package com.wcc.colormyviews
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -13,8 +12,30 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setColorsButtonsAction()
-       // findViewById<Button>(R.id.button_red).setOnClickListener
+        setBoxColor()
 
+    }
+
+    private fun setBoxColor() {
+        box_one_text.setOnClickListener {
+            it.setBackgroundResource(currentColor)
+        }
+
+        box_two_text.setOnClickListener {
+            it.setBackgroundResource(currentColor)
+        }
+
+        box_three_text.setOnClickListener {
+            it.setBackgroundResource(currentColor)
+        }
+
+        box_four_text.setOnClickListener {
+            it.setBackgroundResource(currentColor)
+        }
+
+        box_five_text.setOnClickListener {
+            it.setBackgroundResource(currentColor)
+        }
     }
 
     private fun setColorsButtonsAction() {
