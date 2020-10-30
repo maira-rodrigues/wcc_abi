@@ -108,7 +108,7 @@ class CardsActivity : AppCompatActivity() {
                     ?: 1 * (currentDriverPlayerOne["boldness"]?.toInt() ?: 1))
             }*/
 
-        /*val accelerationTimeCardOne = (currentVehiclePlayerOne["accelerationTime"]?.toInt()
+       /*val accelerationTimeCardOne = (currentVehiclePlayerOne["accelerationTime"]?.toInt()
             ?: 1) * (1 / (currentDriverPlayerOne["accelerationTime"]?.toInt() ?: 1))
 
         val passengersCardOne = (currentVehiclePlayerOne["passengers"]?.toInt()
@@ -118,7 +118,7 @@ class CardsActivity : AppCompatActivity() {
             "car" -> currentDriverPlayerOne["carXP"]?.toInt() ?: 0
             "motorcycle" -> currentDriverPlayerOne["motorcycleXP"]?.toInt() ?: 0
             else -> currentDriverPlayerOne["bikeXP"]?.toInt() ?: 0
-        }*/
+        }
 
         /*val cardTwoMaxVelocity =
             when (currentVehiclePlayerTwo["type"]) {
@@ -177,6 +177,6 @@ class CardsActivity : AppCompatActivity() {
             intent.putExtra("player_one", playerOneName)
             intent.putExtra("player_two", playerTwoName)
             startActivity(intent)
-        }
+        }*/
     }
 }

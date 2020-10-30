@@ -1,7 +1,5 @@
 package com.wcc.supertrunfo
 
-import kotlin.reflect.KProperty
-
 class Card (
         val vehicle: Vehicle,
         val driver: Driver,
@@ -9,48 +7,54 @@ class Card (
 )
 {
     val label: String = "Card ${player.name}"
-    val maxVelocity = setMaxVelocity()
-    val accelerationTime = setAccelerationTime()
-    val passengers = setPassengers()
-    val xp = setXP()
+    val maxVelocity = initMaxVelocity()
+    val accelerationTime = initAccelerationTime()
+    val passengers = initPassengers()
+    val xp = initXP()
 
-
-    //(currentVehiclePlayerOne["passengers"]?.toInt()
-//            ?: 0) * (1 + (currentDriverPlayerOne["defensiveDriving"]?.toInt() ?: 0))
-    private fun setPassengers(): Int {
+//----------------INIT MAX VELOCITY--------------------
+    private fun initMaxVelocity(): Int {
+        return when (vehicle.type) {
+            "car" -> carMaxVelocity()
+            "motorcycle" -> motorcycleMaxVelocity()
+            else -> bikeMaxVelocity()
+        }
+    }
+//----------------INIT PASSENGERS--------------------
+    private fun initPassengers(): Int {
         return vehicle.passengers * (1 + driver.defensiveDriving)
     }
 
+//----------------INIT ACCELERATION TIME---------------
+    private fun initAccelerationTime(): Int {
+        return vehicle.accelerationTime
+    }
 
-    private fun setMaxVelocity(): Int {
+//----------------INIT XP-------------------------------
+    private fun initXP(): Int {
         return when (vehicle.type) {
-            "car" ->
-                if (vehicle.style == "sedã") {
-                    vehicle.maxAcceleration
-                } else {
-                    vehicle.maxAcceleration + 10
-                }
-            "motorcycle" ->
-                (1 / (vehicle.weight)) * (vehicle.maxAcceleration)
-
-            else -> (vehicle.maxAcceleration * (driver.boldness))
+            "car" -> driver.carXP
+            "motorcycle" -> driver.motorcycleXP
+            else -> driver.bikeXP
         }
     }
 
+//--------------FUNCTIONS THAT SET MAX VELOCITY ACCORDING TO VEHICLE TYPE--------------------
 
-//----------------------------------------------------------------------------------
-    private fun setAccelerationTime(): Int {
-        return vehicle.accelerationTime * (1/driver.vehicle.accelerationTime)
-    }
-//----------------------------------------------------------------------------------
-    private fun setXP(): Int {
-        return when (vehicle.type) {
-            "car" -> player.driver.carXP
-            "motorcycle" -> player.driver.motorcycleXP
-            else -> player.driver.bikeXP
+    private fun carMaxVelocity(): Int {
+        return if (vehicle.style == "sedã") {
+            vehicle.maxAcceleration
+        } else{
+            vehicle.maxAcceleration + 10
+        }
     }
 
+    private fun motorcycleMaxVelocity(): Int {
+        return (1 / (vehicle.weight)) * (vehicle.maxAcceleration)
+    }
 
+    private fun bikeMaxVelocity(): Int {
+        return vehicle.maxAcceleration * driver.boldness
     }
 
 }
