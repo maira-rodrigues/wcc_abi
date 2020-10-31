@@ -20,12 +20,17 @@ class DatabaseItems {
         val itemThree = LearnedItem(
             "Git",
             "É um sistema de controle de versão distribuído. Com ele é possível rastrear mudanças no código-fonte durante o desenvolvimento de software.",
-            Level.HIGH
+            Level.LOW
         )
 
         val itemFour = LearnedItem(
             "GroupView",
             "É uma view especial que pode conter outras views (chamadas de filhos).É a classe base para layouts e contêineres de views.",
+            Level.MEDIUM
+        )
+        val itemFive = LearnedItem(
+            "ViewBinding",
+            "View Binding é um recurso que facilita a programação de códigos que interagem com views.",
             Level.HIGH
         )
 
